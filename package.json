@@ -1,4 +1,10 @@
 {
+  "name": "your-app-name",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
   "dependencies": {
     "connect-flash": "^0.1.1",
     "ejs-mate": "^4.0.0",

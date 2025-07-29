@@ -23,7 +23,7 @@ app.post("/predict", (req, res) => {
     console.log("Received inputs:", area, bedrooms, floors, age);
 
     // Spawn Python process with absolute path
-    const pythonProcess = spawn('/Library/Frameworks/Python.framework/Versions/3.13/bin/python3', [
+        const pythonProcess = spawn('python3', [
         path.join(__dirname, 'multifeaturelinearreg.py'),
         area,
         bedrooms,
@@ -66,6 +66,7 @@ app.get("/main", (req, res) => {
 });
 
 
-app.listen(8080, () => {
-    console.log("App is listening on port 8080.");
+const PORT = process.env.PORT || 8080;
+app.listen(PORT, () => {
+    console.log(`App is listening on port ${PORT}.`);
 });
