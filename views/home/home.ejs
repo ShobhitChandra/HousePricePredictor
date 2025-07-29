@@ -1,0 +1,21 @@
+<%- layout('layout/boilerplate') %>
+<body>
+    <div class="container">
+        <h1>House Price Prediction</h1>
+
+        <% if (prediction) { %>
+            <h2>Prediction: ₹ <%= prediction %></h2>
+            <div class="user-info">
+                <p><strong>User Name:</strong> <%= username %></p>
+                <p><strong>Area:</strong> <%= area %> sq ft</p>
+                <p><strong>Bedrooms:</strong> <%= bedrooms %></p>
+                <p><strong>Floors:</strong> <%= floors %></p>
+                <p><strong>Age:</strong> <%= age %> years</p>
+            </div>
+        <% } else { %>
+            <h2>Waiting for input...</h2>
+        <% } %>
+
+        <a href="/main" class="btn btn-secondary mt-3">Predict Another</a>
+    </div>
+</body>

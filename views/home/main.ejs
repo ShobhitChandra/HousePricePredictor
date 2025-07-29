@@ -1,0 +1,68 @@
+<%- layout('layout/boilerplate') %>
+<style>
+    body {
+        background-color: #000000;
+    }
+
+    .container {
+        max-width: 600px;
+        margin: 50px auto;
+        padding: 20px;
+        background-color: #463349;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-control {
+        margin-bottom: 15px;
+    }
+
+    label {
+        color: #fff;
+        font-weight: 500;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <form action="/predict" method="POST" class="needs-validation" novalidate>
+            <!-- User Name -->
+            <div class="mb-3">
+                <label for="username" class="form-label">User Name</label>
+                <input type="text" class="form-control" id="username" name="username"
+                    placeholder="Example input placeholder" required>
+            </div>
+
+            <!-- Area of House and No. of Bedrooms -->
+            <div class="row">
+                <div class="col">
+                    <label for="area" class="form-label">Area of House (sq feet)</label>
+                    <input type="number" class="form-control" id="area" name="area"
+                        placeholder="Area of House (in sq feet)" required>
+                </div>
+                <div class="col">
+                    <label for="bedrooms" class="form-label">No. of Bedrooms</label>
+                    <input type="number" class="form-control" id="bedrooms" name="bedrooms"
+                        placeholder="No. of bedroom" required>
+                </div>
+            </div>
+
+            <!-- No. of Floors and Age of House -->
+            <div class="row mt-3">
+                <div class="col">
+                    <label for="floors" class="form-label">No. of Floors</label>
+                    <input type="number" class="form-control" id="floors" name="floors"
+                        placeholder="No. of floors" required>
+                </div>
+                <div class="col">
+                    <label for="age" class="form-label">Age of House (years)</label>
+                    <input type="number" class="form-control" id="age" name="age"
+                        placeholder="Age of house (in year)" required>
+                </div>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="btn btn-primary mt-3">Check New House Price</button>
+        </form>
+    </div>
+</body>
